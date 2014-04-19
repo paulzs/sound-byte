@@ -1,16 +1,33 @@
 package com.example.sound_byte.app;
 
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity{
+
+    Button main_button;
+    TextView text_view;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        main_button = (Button) findViewById(R.id.main_button);
+        text_view = (TextView) findViewById(R.id.main_text_view);
+        main_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                   text_view.setText("Hello World!");
+            }
+        });
     }
 
 
@@ -33,5 +50,6 @@ public class MainActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }
