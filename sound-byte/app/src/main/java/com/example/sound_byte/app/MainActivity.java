@@ -57,12 +57,12 @@ public class MainActivity extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent){
         if(intent.getAction().equals(ACTION_WIDGET_RECEIVER))
         {
-            mPlay = MediaPlayer.create(context, R.raw.oh_myyy);
-            if(mPlay.isPlaying()){
-                Toast.makeText(context, "resetting controller", Toast.LENGTH_SHORT).show();
-                mPlay.stop();
-                mPlay.reset();
+            if(mPlay == null){
+                mPlay = MediaPlayer.create(context, R.raw.oh_myyy);
                 mPlay.start();
+            }
+            else if(mPlay.isPlaying()){
+                mPlay.seekTo(0);
             }
             else{
                 mPlay.start();
