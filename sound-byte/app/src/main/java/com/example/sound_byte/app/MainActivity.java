@@ -27,7 +27,7 @@ import android.widget.Toast;
 public class MainActivity extends AppWidgetProvider {
 
    // Button soundbutton;
-    //MediaPlayer mp = new MediaPlayer();
+    MediaPlayer mPlay;
     public static String ACTION_WIDGET_RECEIVER = "ActionReceiverWidget";
 
     @Override
@@ -57,8 +57,16 @@ public class MainActivity extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent){
         if(intent.getAction().equals(ACTION_WIDGET_RECEIVER))
         {
-            MediaPlayer mPlay = MediaPlayer.create(context, R.raw.oh_myyy);
-            mPlay.start();
+            if(mPlay != null){
+                Toast.makeText(context, "resetting controller", Toast.LENGTH_SHORT).show();
+                mPlay.stop();
+                mPlay.reset();
+                mPlay.start();
+            }
+            else{
+                mPlay = MediaPlayer.create(context, R.raw.oh_myyy);
+                mPlay.start();
+            }
         }
 
         super.onReceive(context,intent);
