@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:debuggable = "true">
-        <activity
+        <!--<activity
             android:name="com.example.sound_byte.app.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
@@ -16,10 +16,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <receiver android:name="SoundButton" >
+        </activity>-->
+        <receiver android:name="MainActivity" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.sound_byte.app.MainActivity.ACTION_WIDGET_RECEIVER" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/soundbuttonproviderinfo"/>
