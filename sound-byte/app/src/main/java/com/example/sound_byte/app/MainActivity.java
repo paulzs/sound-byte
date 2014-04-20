@@ -35,10 +35,10 @@ public class MainActivity extends AppWidgetProvider {
 
         for(int i=0; i<appWidgetIds.length; i++){
             int currentWidgetId = appWidgetIds[i];
-            String url = "http://www.google.com";
+            /*String url = "http://www.google.com";
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setData(Uri.parse(url));
+            intent.setData(Uri.parse(url));*/
             Intent soundIntent = new Intent(context, MainActivity.class);
             soundIntent.setAction(ACTION_WIDGET_RECEIVER);
            /* PendingIntent pending = PendingIntent.getActivity(context, 0,
