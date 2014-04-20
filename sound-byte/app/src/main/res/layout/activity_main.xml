@@ -20,6 +20,7 @@
         android:id="@+id/main_button"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:clickable="true" />
+        android:clickable="true"
+       style="?android:attr/borderlessButtonStyle"/>
 
 </RelativeLayout>
