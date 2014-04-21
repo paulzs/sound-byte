@@ -1,22 +1,11 @@
 package com.example.sound_byte.app;
 
-import android.app.Activity;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
@@ -35,14 +24,8 @@ public class MainActivity extends AppWidgetProvider {
 
         for(int i=0; i<appWidgetIds.length; i++){
             int currentWidgetId = appWidgetIds[i];
-            /*String url = "http://www.google.com";
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setData(Uri.parse(url));*/
             Intent soundIntent = new Intent(context, MainActivity.class);
             soundIntent.setAction(ACTION_WIDGET_RECEIVER);
-           /* PendingIntent pending = PendingIntent.getActivity(context, 0,
-                    intent, 0);*/
             PendingIntent pending = PendingIntent.getBroadcast(context, 0, soundIntent, 0);
             RemoteViews views = new RemoteViews(context.getPackageName(),
                     R.layout.activity_main);
