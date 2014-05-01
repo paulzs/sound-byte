@@ -7,6 +7,9 @@ The greatest sound button to ever grace the Android platform
 When summoned (read:clicked), this Android widget plays back the famous "Oh My" as uttered by the incomparable George Takei himself. Those fortunate enough to be within reach of these sound waves will be flattered, bemused and just a little bit turned on.
 
 ### Features
+
+![Button Icon](https://raw.githubusercontent.com/paulzs/sound-byte/master/sound-byte/app/src/main/res/raw/ohmy.png)
+
 A simple 2x2 widget that can be installed and clicked on any Android device
 
 ### Installing
