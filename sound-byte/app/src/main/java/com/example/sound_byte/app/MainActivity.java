@@ -40,11 +40,11 @@ public class MainActivity extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent){
         if(intent.getAction().equals(ACTION_WIDGET_RECEIVER))
         {
-            if(mPlay == null){
+            if(mPlay == null){ //If soundclip is not already playing, create and play
                 mPlay = MediaPlayer.create(context, R.raw.oh_myyy);
                 mPlay.start();
             }
-            else if(mPlay.isPlaying()){
+            else if(mPlay.isPlaying()){ //If already playing, rewind to beginning and play to avoid echo effect
                 mPlay.seekTo(0);
             }
             else{
@@ -54,8 +54,5 @@ public class MainActivity extends AppWidgetProvider {
 
         super.onReceive(context, intent);
     }
-
-
-
 
 }
